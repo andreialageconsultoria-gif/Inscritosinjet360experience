@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)file:///C:/Users/I/Downloads/index_7.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INJET 360 Experience — Inscrição</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="file:///C:/Users/I/Downloads/index_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --wine-deep:#3a0a16;
+    --wine:#5e1226;
+    --wine-mid:#7a1a38;
+    --cream:#f5ebdf;
+    --cream-dim:rgba(245,235,223,.62);
+    --rose:#c08e93;
+    --rose-soft:#d4a5a9;
+    --line:rgba(245,235,223,.16);
+    --field-bg:rgba(245,235,223,.05);
+    --field-bg-focus:rgba(245,235,223,.09);
+    --error:#e8a0a5;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--cream);
+    min-height:100vh;
+    background:
+      radial-gradient(120% 90% at 78% 18%, rgba(192,142,147,.22) 0%, transparent 46%),
+      radial-gradient(130% 110% at 15% 90%, rgba(58,10,22,.9) 0%, transparent 55%),
+      linear-gradient(150deg,#6b1530 0%,#5e1226 42%,#43101f 100%);
+    background-attachment:fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:clamp(20px,5vw,56px);
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* satin sheen overlay */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(60% 40% at 30% 25%, rgba(255,255,255,.05), transparent 60%),
+      radial-gradient(50% 60% at 85% 75%, rgba(0,0,0,.28), transparent 55%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .card{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:520px;
+    background:rgba(41,8,17,.42);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:clamp(30px,5vw,52px) clamp(24px,5vw,48px) clamp(34px,5vw,48px);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    box-shadow:0 30px 80px -30px rgba(0,0,0,.6);
+  }
+
+  /* ---- Brand header ---- */
+  .brand{
+    text-align:center;
+    margin-bottom:36px;
+  }
+  .logo{
+    display:inline-flex;
+    align-items:center;
+    gap:.24em;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(40px,10vw,56px);
+    letter-spacing:.04em;
+    line-height:1;
+    color:var(--cream);
+  }
+  .logo .three-sixty{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.5em;
+    font-weight:500;
+    color:var(--rose);
+    width:1.55em;
+    height:1.55em;
+    border:1.5px solid var(--cream);
+    border-radius:50%;
+    letter-spacing:.02em;
+    padding-left:.06em;
+  }
+  .experience{
+    margin-top:12px;
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:clamp(11px,2.6vw,13px);
+    letter-spacing:.62em;
+    text-indent:.62em;
+    color:var(--rose);
+  }
+
+  .divider{
+    width:44px;
+    height:1px;
+    background:var(--rose);
+    margin:26px auto 0;
+    opacity:.6;
+  }
+
+  /* ---- Event line ---- */
+  .event-meta{
+    text-align:center;
+    margin-top:22px;
+  }
+  .event-meta h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(19px,4.6vw,23px);
+    letter-spacing:.01em;
+    margin-bottom:12px;
+  }
+  .event-meta .details{
+    font-size:13px;
+    font-weight:300;
+    letter-spacing:.03em;
+    color:var(--cream-dim);
+    line-height:1.7;
+  }
+  .event-meta .details strong{
+    color:var(--cream);
+    font-weight:500;
+  }
+
+  /* ---- Form ---- */
+  form{margin-top:34px}
+
+  .field{margin-bottom:20px}
+
+  label{
+    display:block;
+    font-size:11px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--rose-soft);
+    margin-bottom:9px;
+  }
+
+  input{
+    width:100%;
+    font-family:'Jost',sans-serif;
+    font-size:16px;
+    font-weight:300;
+    color:var(--cream);
+    background:var(--field-bg);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:14px 16px;
+    transition:border-color .22s ease, background .22s ease;
+  }
+  input::placeholder{color:rgba(245,235,223,.32);font-weight:300}
+  input:hover{border-color:rgba(245,235,223,.3)}
+  input:focus{
+    outline:none;
+    border-color:var(--rose);
+    background:var(--field-bg-focus);
+  }
+  input.invalid{border-color:var(--error)}
+
+  .field-error{
+    display:none;
+    font-size:12px;
+    color:var(--error);
+    margin-top:7px;
+    letter-spacing:.02em;
+  }
+  .field-error.show{display:block}
+
+  /* ---- Photo upload ---- */
+  .upload{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px 14px;
+    background:var(--field-bg);
+    border:1px solid var(--line);
+    border-radius:3px;
+    cursor:pointer;
+    transition:border-color .22s ease, background .22s ease;
+  }
+  .upload:hover{border-color:rgba(245,235,223,.3)}
+  .upload.invalid{border-color:var(--error)}
+  .upload input[type=file]{display:none}
+  .upload .thumb{
+    flex:0 0 auto;
+    width:50px;height:50px;
+    border-radius:3px;
+    border:1px solid var(--line);
+    background:var(--field-bg) center/cover no-repeat;
+    color:var(--rose-soft);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .upload .up-text{
+    font-size:14px;
+    font-weight:300;
+    color:var(--cream-dim);
+    line-height:1.45;
+    word-break:break-word;
+  }
+  .upload .up-text .hint{
+    display:block;
+    font-size:11.5px;
+    color:rgba(245,235,223,.4);
+    margin-top:3px;
+  }
+
+  /* ---- Notice (duplicado / erro) ---- */
+  .notice{
+    display:none;
+    margin-top:14px;
+    padding:12px 15px;
+    border:1px solid var(--error);
+    border-radius:3px;
+    background:rgba(232,160,165,.08);
+    color:var(--error);
+    font-size:13px;
+    font-weight:300;
+    line-height:1.55;
+    letter-spacing:.01em;
+    text-align:center;
+  }
+  .notice.show{display:block}
+
+  /* ---- Consent checkbox ---- */
+  .consent{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin:4px 0 6px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .consent input{
+    position:absolute;
+    opacity:0;
+    width:0;height:0;
+  }
+  .consent .box{
+    flex:0 0 auto;
+    width:20px;height:20px;
+    margin-top:1px;
+    border:1px solid var(--line);
+    border-radius:3px;
+    background:var(--field-bg);
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .consent:hover .box{border-color:rgba(245,235,223,.35)}
+  .consent .box::after{
+    content:"";
+    width:9px;height:5px;
+    border-left:1.5px solid var(--wine-deep);
+    border-bottom:1.5px solid var(--wine-deep);
+    transform:rotate(-45deg) translate(0,-1px);
+    opacity:0;
+    transition:opacity .15s ease;
+  }
+  .consent input:checked + .box{
+    background:var(--cream);
+    border-color:var(--cream);
+  }
+  .consent input:checked + .box::after{opacity:1}
+  .consent input:focus-visible + .box{
+    outline:2px solid var(--rose);
+    outline-offset:2px;
+  }
+  .consent .text{
+    font-size:12.5px;
+    font-weight:300;
+    line-height:1.6;
+    color:var(--cream-dim);
+    letter-spacing:.01em;
+  }
+  .consent.invalid .box{border-color:var(--error)}
+
+  /* ---- Submit ---- */
+  button{
+    width:100%;
+    margin-top:12px;
+    font-family:'Jost',sans-serif;
+    font-size:13px;
+    font-weight:500;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--wine-deep);
+    background:var(--cream);
+    border:none;
+    border-radius:3px;
+    padding:17px;
+    cursor:pointer;
+    transition:background .22s ease, transform .12s ease, color .22s ease;
+  }
+  button:hover:not(:disabled){background:var(--rose-soft);color:var(--wine-deep)}
+  button:active:not(:disabled){transform:translateY(1px)}
+  button:disabled{opacity:.55;cursor:not-allowed}
+
+  .form-note{
+    text-align:center;
+    font-size:11.5px;
+    font-weight:300;
+    letter-spacing:.02em;
+    color:var(--cream-dim);
+    margin-top:18px;
+    line-height:1.6;
+  }
+
+  /* ---- Success ---- */
+  .success{
+    display:none;
+    text-align:center;
+    padding:14px 0 4px;
+    animation:fade .5s ease both;
+  }
+  .success.show{display:block}
+  .success .ring{
+    width:66px;height:66px;
+    margin:0 auto 24px;
+    border:1.5px solid var(--rose);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .success .ring::after{
+    content:"";
+    width:20px;height:11px;
+    border-left:1.5px solid var(--cream);
+    border-bottom:1.5px solid var(--cream);
+    transform:rotate(-45deg) translate(1px,-2px);
+  }
+  .success h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:26px;
+    margin-bottom:12px;
+  }
+  .success p{
+    font-size:14px;
+    font-weight:300;
+    color:var(--cream-dim);
+    line-height:1.7;
+    max-width:340px;
+    margin:0 auto;
+  }
+
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .spinner{
+    display:none;
+    width:16px;height:16px;
+    border:2px solid rgba(58,10,22,.35);
+    border-top-color:var(--wine-deep);
+    border-radius:50%;
+    animation:spin .7s linear infinite;
+    vertical-align:middle;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+  }
+</style>
+</head>
+<body>
+  <main class="card">
+    <!-- Brand -->
+    <div class="brand">
+      <div class="logo">INJET<span class="three-sixty">360</span></div>
+      <div class="experience">EXPERIENCE</div>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Event details -->
+    <div class="event-meta">
+      <h1>Garanta sua vaga na imersão</h1>
+      <p class="details">
+        <strong>18 e 19 de setembro de 2026</strong> &nbsp;·&nbsp; Alphaville, São Paulo<br>
+        Uma experiência presencial para médicos
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form id="regForm" novalidate="">
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name">
+        <div class="field-error" data-for="nome">Por favor, informe seu nome.</div>
+      </div>
+
+      <div class="field">
+        <label for="crm">CRM</label>
+        <input type="text" id="crm" name="crm" placeholder="CRM/UF 000000" autocomplete="off">
+        <div class="field-error" data-for="crm">Informe seu CRM com a UF.</div>
+      </div>
+
+      <div class="field">
+        <label for="rg">RG</label>
+        <input type="text" id="rg" name="rg" placeholder="00.000.000-0" autocomplete="off">
+        <div class="field-error" data-for="rg">Informe seu RG.</div>
+      </div>
+
+      <div class="field">
+        <label for="whatsapp">WhatsApp</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" inputmode="numeric" autocomplete="tel">
+        <div class="field-error" data-for="whatsapp">Informe um WhatsApp válido com DDD.</div>
+      </div>
+
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email">
+        <div class="field-error" data-for="email">Informe um e-mail válido.</div>
+      </div>
+
+      <div class="field">
+        <label for="instagram">Instagram</label>
+        <input type="text" id="instagram" name="instagram" placeholder="@seuperfil" autocomplete="off">
+        <div class="field-error" data-for="instagram">Informe seu Instagram.</div>
+      </div>
+
+      <div class="field">
+        <label for="foto">Foto para crachá de identificação</label>
+        <label class="upload" id="uploadWrap">
+          <input type="file" id="foto" name="foto" accept="image/*">
+          <span class="thumb" id="thumb" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8h3l1.4-2h7.2L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.2"></circle>
+            </svg>
+          </span>
+          <span class="up-text" id="upText">Toque para enviar sua foto
+            <span class="hint">Foto de rosto · JPG ou PNG</span>
+          </span>
+        </label>
+        <div class="field-error" data-for="foto">Por favor, envie sua foto para o crachá.</div>
+      </div>
+
+      <div class="field">
+        <label for="fotoFamilia">Foto da família <span style="text-transform:none;letter-spacing:0;color:var(--cream-dim);font-weight:300">(somente mentorados)</span></label>
+        <label class="upload" id="uploadWrapFam">
+          <input type="file" id="fotoFamilia" name="fotoFamilia" accept="image/*">
+          <span class="thumb" id="thumbFam" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8h3l1.4-2h7.2L17 8h3v11H4z"></path><circle cx="12" cy="13" r="3.2"></circle>
+            </svg>
+          </span>
+          <span class="up-text" id="upTextFam">Se você é mentorado, envie uma foto da sua família
+            <span class="hint">Opcional · JPG ou PNG</span>
+          </span>
+        </label>
+        <div class="field-error" data-for="fotoFamilia">Não foi possível carregar essa imagem. Tente outra.</div>
+      </div>
+
+      <label class="consent" id="consentWrap">
+        <input type="checkbox" id="consent" name="consent">
+        <span class="box"></span>
+        <span class="text">Autorizo o uso dos meus dados e da minha imagem para fins de organização, comunicação e divulgação da INJET 360 Experience, conforme a LGPD.</span>
+      </label>
+      <div class="field-error" data-for="consent" style="margin-top:2px">É necessário autorizar para concluir a inscrição.</div>
+
+      <div class="notice" id="dupNotice">Este e-mail ou CRM já consta na lista da INJET 360 Experience. Se precisar alterar seus dados, fale com a organização.</div>
+
+      <button type="submit" id="submitBtn">
+        <span class="btn-label">Confirmar inscrição</span>
+        <span class="spinner" id="spinner"></span>
+      </button>
+
+      <p class="form-note">Suas informações são usadas apenas para a organização do evento.</p>
+    </form>
+
+    <!-- Success state -->
+    <div class="success" id="successMsg">
+      <div class="ring"></div>
+      <h2>Inscrição confirmada</h2>
+      <p>Recebemos seus dados. Em breve entraremos em contato pelo WhatsApp com os próximos passos da INJET 360 Experience.</p>
+    </div>
+  </main>
+
+<script>
+  // ===== CONFIGURAÇÃO =====
+  // Cole aqui a URL do seu Web App do Google Apps Script (termina em /exec)
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJtEAtEdA3xZb4fx1SvE5KaFT0lmkjEylQ8DGubnKo-O8EG_wJ3nyU1qyolDcHac88/exec";
+
+  const form = document.getElementById('regForm');
+  const successMsg = document.getElementById('successMsg');
+  const submitBtn = document.getElementById('submitBtn');
+  const spinner = document.getElementById('spinner');
+  const btnLabel = submitBtn.querySelector('.btn-label');
+  const wpp = document.getElementById('whatsapp');
+  const dupNotice = document.getElementById('dupNotice');
+
+  // Redimensiona/comprime a imagem no navegador antes de enviar (upload leve e rápido)
+  function fileToResizedDataURL(file, maxDim, quality){
+    maxDim = maxDim || 1400; quality = quality || 0.85;
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      const img = new Image();
+      reader.onload = () => { img.src = reader.result; };
+      reader.onerror = () => reject(new Error('read'));
+      img.onload = () => {
+        let w = img.naturalWidth, h = img.naturalHeight;
+        if (Math.max(w, h) > maxDim){
+          const s = maxDim / Math.max(w, h);
+          w = Math.round(w * s); h = Math.round(h * s);
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = () => reject(new Error('image'));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Cria um campo de upload reaproveitável e devolve o acesso aos dados da foto
+  function criarUpload(inputId, wrapId, thumbId, textId){
+    const input = document.getElementById(inputId);
+    const wrap  = document.getElementById(wrapId);
+    const thumb = document.getElementById(thumbId);
+    const text  = document.getElementById(textId);
+    const store = { dataURL: '', nome: '' };
+
+    function setError(show){
+      wrap.classList.toggle('invalid', show);
+      document.querySelector('.field-error[data-for="' + inputId + '"]').classList.toggle('show', show);
+    }
+
+    input.addEventListener('change', async () => {
+      setError(false);
+      const file = input.files[0];
+      if(!file){ return; }
+      if(!file.type.startsWith('image/')){ setError(true); return; }
+      if(file.size > 8 * 1024 * 1024){ setError(true); return; }
+      try{
+        store.dataURL = await fileToResizedDataURL(file);
+        store.nome = (file.name || 'foto').replace(/\.[^.]+$/, '') + '.jpg';
+        thumb.style.backgroundImage = 'url("' + store.dataURL + '")';
+        thumb.innerHTML = '';
+        text.innerHTML = 'Foto selecionada<span class="hint">Toque para trocar</span>';
+      }catch(e){
+        store.dataURL = ''; store.nome = '';
+        setError(true);
+      }
+    });
+
+    return { store: store, setError: setError };
+  }
+
+  const fotoCracha  = criarUpload('foto', 'uploadWrap', 'thumb', 'upText');
+  const fotoFamilia = criarUpload('fotoFamilia', 'uploadWrapFam', 'thumbFam', 'upTextFam');
+
+  // Máscara de WhatsApp brasileira
+  wpp.addEventListener('input', () => {
+    let v = wpp.value.replace(/\D/g, '').slice(0, 11);
+    if (v.length > 6)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+    else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+    else if (v.length > 0) v = `(${v}`;
+    wpp.value = v;
+  });
+
+  function showError(id, show){
+    const input = document.getElementById(id);
+    const err = document.querySelector(`.field-error[data-for="${id}"]`);
+    input.classList.toggle('invalid', show);
+    err.classList.toggle('show', show);
+  }
+
+  function validate(){
+    let ok = true;
+    const nome = document.getElementById('nome').value.trim();
+    const crm = document.getElementById('crm').value.trim();
+    const rg = document.getElementById('rg').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const insta = document.getElementById('instagram').value.trim();
+    const wppDigits = wpp.value.replace(/\D/g,'');
+
+    showError('nome', !nome);           if(!nome) ok = false;
+    showError('crm', !crm);             if(!crm) ok = false;
+    showError('rg', !rg);               if(!rg) ok = false;
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    showError('email', !emailOk);       if(!emailOk) ok = false;
+    const wppOk = wppDigits.length >= 10;
+    showError('whatsapp', !wppOk);      if(!wppOk) ok = false;
+    showError('instagram', !insta);     if(!insta) ok = false;
+
+    // foto do crachá (obrigatória); a da família é opcional
+    const fotoOk = !!fotoCracha.store.dataURL;
+    fotoCracha.setError(!fotoOk);       if(!fotoOk) ok = false;
+
+    // autorização
+    const consent = document.getElementById('consent');
+    const consentOk = consent.checked;
+    document.getElementById('consentWrap').classList.toggle('invalid', !consentOk);
+    document.querySelector('.field-error[data-for="consent"]').classList.toggle('show', !consentOk);
+    if(!consentOk) ok = false;
+
+    return ok;
+  }
+
+  // limpa erro ao digitar
+  ['nome','crm','rg','whatsapp','email','instagram'].forEach(id=>{
+    document.getElementById(id).addEventListener('input', ()=>showError(id,false));
+  });
+  document.getElementById('consent').addEventListener('change', ()=>{
+    document.getElementById('consentWrap').classList.remove('invalid');
+    document.querySelector('.field-error[data-for="consent"]').classList.remove('show');
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    dupNotice.classList.remove('show');
+    if(!validate()) return;
+
+    submitBtn.disabled = true;
+    btnLabel.style.display = 'none';
+    spinner.style.display = 'inline-block';
+
+    const dados = {
+      nome: document.getElementById('nome').value.trim(),
+      crm: document.getElementById('crm').value.trim(),
+      rg: document.getElementById('rg').value.trim(),
+      whatsapp: wpp.value.trim(),
+      email: document.getElementById('email').value.trim(),
+      instagram: document.getElementById('instagram').value.trim(),
+      foto: fotoCracha.store.dataURL,
+      fotoNome: fotoCracha.store.nome,
+      fotoFamilia: fotoFamilia.store.dataURL,
+      fotoFamiliaNome: fotoFamilia.store.nome,
+      autorizacao: document.getElementById('consent').checked ? 'Sim' : 'Não',
+      data: new Date().toLocaleString('pt-BR')
+    };
+
+    function reactivate(){
+      submitBtn.disabled = false;
+      btnLabel.style.display = 'inline';
+      spinner.style.display = 'none';
+    }
+
+    let result = null;
+    try {
+      // text/plain evita o preflight e permite ler a resposta do Apps Script
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(dados)
+      });
+      result = await res.json();
+    } catch (err) {
+      // não foi possível ler a resposta (rede/CORS); o servidor ainda bloqueia duplicados
+      result = null;
+    }
+
+    if (result && result.status === 'duplicate') {
+      reactivate();
+      dupNotice.classList.add('show');
+      dupNotice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    if (result && result.status === 'error') {
+      reactivate();
+      alert('Não foi possível concluir sua inscrição agora. Tente novamente em instantes.');
+      return;
+    }
+
+    // status 'ok' ou resposta ilegível: inscrição registrada
+    form.style.display = 'none';
+    successMsg.classList.add('show');
+  });
+</script>
+
+
+</body></html>
